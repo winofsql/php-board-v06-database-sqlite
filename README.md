@@ -5,7 +5,7 @@
 - 表示データの脆弱性対応
 
 ```sql
-CREATE TABLE `board` (
+CREATE TABLE IF NOT EXISTS `board` (
   `row_no` bigint(20) NOT NULL PRIMARY KEY AUTOINCREMENT,
   `body` varchar(1000) DEFAULT NULL,
   `subject` varchar(200) DEFAULT NULL,
