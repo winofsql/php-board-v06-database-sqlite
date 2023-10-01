@@ -149,7 +149,7 @@ function connectDb(){
     $result = null;
 
     try {
-        $result = new PDO( 'sqlite:bbs.sqlite3' );
+        $result = new PDO( 'sqlite:../bbs.sqlite3' );
     } 
     catch ( PDOException $e ) {
         $error["db"] .= $e->getMessage();
