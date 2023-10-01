@@ -47,7 +47,7 @@ function write_data() {
     $sql = "insert into board
             (`from`, body, cdate, subject)
             values
-            (:from, :body, now(), :subject)";
+            (:from, :body, datetime('now'), :subject)";
 
     file_put_contents( "debug.log", $sql . "\n", FILE_APPEND );
 
@@ -149,10 +149,9 @@ function connectDb(){
     $result = null;
 
     try {
-        $result = new PDO( $GLOBALS["connect_string"], $GLOBALS["user"], $GLOBALS["password"] );
+        $result = new PDO( 'sqlite:bbs.sqlite3' );
     } 
     catch ( PDOException $e ) {
-        $error["db"] = "<div>{$GLOBALS["connect_string"]}, {$GLOBALS["user"]}, {$GLOBALS["password"]}</div>"; 
         $error["db"] .= $e->getMessage();
         return $result;
     }
