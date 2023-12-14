@@ -6,7 +6,7 @@
 
 ```sql
 CREATE TABLE IF NOT EXISTS `board` (
-  `row_no` bigint(20) NOT NULL PRIMARY KEY AUTOINCREMENT,
+  `row_no` int NOT NULL PRIMARY KEY AUTOINCREMENT,
   `body` varchar(1000) DEFAULT NULL,
   `subject` varchar(200) DEFAULT NULL,
   `from` varchar(20) DEFAULT NULL,
